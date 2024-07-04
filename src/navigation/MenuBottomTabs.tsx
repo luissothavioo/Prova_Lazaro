@@ -1,15 +1,13 @@
 import { createBottomTabNavigator, BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
-import { Slide1, Slide2, Slide3 } from "../screens/index";
+import {Slide3 } from "../screens/index";
 import { Entypo, Feather } from "@expo/vector-icons";
 import React from 'react';
 
 type MenuTabParam = {
-    Slide1: undefined
-    Slide2: undefined
     Slide3: undefined
 }
 
-type MenuScreenNavigation = BottomTabNavigationProp<MenuTabParam, "Slide1">
+type MenuScreenNavigation = BottomTabNavigationProp<MenuTabParam, "Slide3">
 export type MenuTabTypes = {
     navigation: MenuScreenNavigation;
 }

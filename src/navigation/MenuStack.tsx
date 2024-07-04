@@ -1,12 +1,12 @@
 import { StackNavigationProp, createStackNavigator } from "@react-navigation/stack";
-import {Slide1, Slide2, Slide3} from "../screens/index"
+import {Login, Cadastro, Slide3} from "../screens/index"
 
 type MenuStackParam = {
-    Slide1: undefined
-    Slide2: undefined
+    Login: undefined
+    Cadastro: undefined
 }
 
-type MenuScreenNavigation = StackNavigationProp<MenuStackParam, "Slide1">
+type MenuScreenNavigation = StackNavigationProp<MenuStackParam, "Login">
 export type MenuStackTypes = {
     navigation: MenuScreenNavigation
 }
@@ -20,11 +20,11 @@ export function MenuStack() {
         }}>
            <Stack.Screen options={{
             headerTitle: "Login"
-           }} name="Slide1" component={Slide1}/>
+           }} name="Login" component={Login}/>
 
            <Stack.Screen options={{
             headerTitle: "Cadastro" 
-           }} name="Slide2" component={Slide2}/>
+           }} name="Cadastro" component={Cadastro}/>
         </Stack.Navigator>
     )
 }
