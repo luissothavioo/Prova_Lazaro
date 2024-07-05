@@ -5,6 +5,7 @@ import { Painel } from './style';
 import { useState } from "react";
 import React from "react";
 import { MaterialIcons, Entypo } from "@expo/vector-icons";
+import { ButtonInterface } from "../../components/ButtonInterface";
 
 export interface IAuthenticate {
     email?: string;
@@ -20,6 +21,7 @@ export function Slide1({navigation}: MenuStackTypes) {
         } else {
             Alert.alert("Preencha todos os campos!!!")
         }
+    }
 
     function handleRegister() {
         navigation.navigate("Cadastro")
@@ -29,14 +31,29 @@ export function Slide1({navigation}: MenuStackTypes) {
         setData({...data, ...item});
     }
     
-    }
     return (
         <View style={Painel.container}>
             <KeyboardAvoidingView>
+                <View>
                 <TextInput
+                    placeholderTextColor={"black"}
                     placeholder="Email"
+                    keyboardType="email-address"
                     onChangeText={(i) => handleChange({email: i})}
                 />
+                </View>
+                
+                <View>
+                <TextInput
+                    placeholderTextColor={"black"}
+                    placeholder="Senha"
+                    secureTextEntry={true}
+                    onChangeText={(i) => handleChange({password: i})}
+                />
+                </View>
+
+                <ButtonInterface title="Login" type="primary" onPressI={handleSignIn}/>
+                <ButtonInterface title="Cadastrar" type="secondary" onPressI={handleRegister}/>
 
             </KeyboardAvoidingView>
 
