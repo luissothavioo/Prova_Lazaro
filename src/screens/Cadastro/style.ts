@@ -5,7 +5,7 @@ export const Painel = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "white"
+        backgroundColor: "rgb(239, 253, 255)"
     },
     botao: {
         width: 45,
@@ -17,5 +17,28 @@ export const Painel = StyleSheet.create({
     text: {
         color: "white",
         fontSize: 14
+    },
+    campo: {
+        alignItems: "center",
+        backgroundColor: 'beige',
+        borderWidth: 5,
+        borderTopLeftRadius: 20,
+        borderBottomRightRadius: 20,
+        width: 300,
+        height: 80,
+        flexDirection: "row",
+        padding: 20,
+        marginBottom: 20,
+        borderColor: "black"
+    },
+    input: {
+        paddingLeft: 13,
+        width: 300,
+        height: 45,
+        fontStyle: "italic",
+        fontWeight: "900"
+    },
+    icone: {
+        fontSize: 35
     }
 })

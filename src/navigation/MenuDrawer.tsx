@@ -1,13 +1,15 @@
 import {DrawerNavigationProp, createDrawerNavigator} from '@react-navigation/drawer';
-import { Slide3 } from '../screens/index';
+import { Animais, Cadastro } from '../screens/index';
 import React from 'react';
 import { MenuBottomTabs } from './MenuBottomTabs';
 
 type MenuDrawerParam = {
-    Slide3: undefined;
+    Cadastro: undefined
+    Animais: undefined
+    Carros: undefined
 }
 
-type MenuScreenNavigation = DrawerNavigationProp<MenuDrawerParam, "Slide3">
+type MenuScreenNavigation = DrawerNavigationProp<MenuDrawerParam, "Cadastro">
 
 export type MenuDrawerTypes = {
     navigation: MenuScreenNavigation;
@@ -17,6 +19,8 @@ export function MenuDrawer () {
     const Drawer = createDrawerNavigator<MenuDrawerParam>();
     return (
         <Drawer.Navigator>
-            <Drawer.Screen name='Slide3' component={Slide3}/>        </Drawer.Navigator>
+            <Drawer.Screen name='Cadastro' component={Cadastro}/>
+            <Drawer.Screen name='Animais' component={MenuBottomTabs}/>   
+        </Drawer.Navigator>
     )
 }

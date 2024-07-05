@@ -12,7 +12,7 @@ export interface IAuthenticate {
     password?: string;
 }
 
-export function Slide1({navigation}: MenuStackTypes) {
+export function Login({ navigation }: MenuStackTypes) {
     const [data, setData] = useState<IAuthenticate>();
 
     async function handleSignIn() {
@@ -24,44 +24,42 @@ export function Slide1({navigation}: MenuStackTypes) {
     }
 
     function handleRegister() {
-        navigation.navigate("Cadastro")
+        navigation.navigate("MenuDrawer")
     }
 
-    function handleChange (item: IAuthenticate) {
-        setData({...data, ...item});
+    function handleChange(item: IAuthenticate) {
+        setData({ ...data, ...item });
     }
-    
+
     return (
         <View style={Painel.container}>
             <KeyboardAvoidingView>
-                <View>
-                <TextInput
-                    placeholderTextColor={"black"}
-                    placeholder="Email"
-                    keyboardType="email-address"
-                    onChangeText={(i) => handleChange({email: i})}
-                />
-                </View>
-                
-                <View>
-                <TextInput
-                    placeholderTextColor={"black"}
-                    placeholder="Senha"
-                    secureTextEntry={true}
-                    onChangeText={(i) => handleChange({password: i})}
-                />
+                <View style={Painel.campo}>
+                    <MaterialIcons name="email" style={Painel.icone} />
+                    <TextInput  style={Painel.input}
+                        placeholderTextColor={"black"}
+                        placeholder="Email"
+                        keyboardType="email-address"
+                        onChangeText={(i) => handleChange({ email: i })}
+                    />
                 </View>
 
-                <ButtonInterface title="Login" type="primary" onPressI={handleSignIn}/>
-                <ButtonInterface title="Cadastrar" type="secondary" onPressI={handleRegister}/>
+                <View style={Painel.campo}>
+                    <MaterialIcons name="password" style={Painel.icone}/>
+                    <TextInput  style={Painel.input}
+                        placeholderTextColor={"black"}
+                        placeholder="Senha"
+                        secureTextEntry={true}
+                        onChangeText={(i) => handleChange({ password: i })}
+                    />
+                </View>
+
+                <ButtonInterface title="Login" type="primary" onPressI={handleSignIn} />
+                <ButtonInterface title="Cadastrar" type="secondary" onPressI={handleRegister} />
 
             </KeyboardAvoidingView>
 
-            <TouchableOpacity style={Painel.botao}
-                onPress={() => navigation.push("Cadastro")}
-            >
-            </TouchableOpacity>
         </View>
-        
+
     )
 }

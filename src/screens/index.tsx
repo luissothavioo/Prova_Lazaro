@@ -1,3 +1,5 @@
-export {Slide1 as Login} from "./Login"
-export {Slide2 as Cadastro} from "./Cadastro"
-export {Slide3 as Slide3} from "./Slide3"
+export {Login as Login} from "./Login"
+export {Cadastro as Cadastro} from "./Cadastro"
+export {Animais as Animais} from "./Animais"
+export {Adicionar as Adicionar} from "./Adicionar"
+export {Comprar as Comprar} from "./Comprar"
