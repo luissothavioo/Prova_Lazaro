@@ -6,6 +6,8 @@ import { useState } from "react";
 import React from "react";
 import { MaterialIcons, Entypo } from "@expo/vector-icons";
 import { ButtonInterface } from "../../components/ButtonInterface";
+import { useAuth } from "../../hook/auth";
+import { AxiosError } from "axios";
 
 export interface IAuthenticate {
     email?: string;
@@ -14,17 +16,27 @@ export interface IAuthenticate {
 
 export function Login({ navigation }: MenuStackTypes) {
     const [data, setData] = useState<IAuthenticate>();
+    const {signIn, setLoading} = useAuth()
 
     async function handleSignIn() {
         if (data?.email && data.password) {
             console.log(data)
+            setLoading(true)
+            try {
+                await signIn(data)
+            } catch (error) {
+                const err = error as AxiosError
+                const msg = err.response?.data as string
+                Alert.alert(msg)
+            }
+            setLoading(false)
         } else {
             Alert.alert("Preencha todos os campos!!!")
         }
     }
 
     function handleRegister() {
-        navigation.navigate("MenuDrawer")
+        navigation.navigate("Cadastro")
     }
 
     function handleChange(item: IAuthenticate) {
@@ -33,6 +45,7 @@ export function Login({ navigation }: MenuStackTypes) {
 
     return (
         <View style={Painel.container}>
+            <Text style={Painel.titulo}>LOGIN</Text>
             <KeyboardAvoidingView>
                 <View style={Painel.campo}>
                     <MaterialIcons name="email" style={Painel.icone} />
@@ -54,8 +67,8 @@ export function Login({ navigation }: MenuStackTypes) {
                     />
                 </View>
 
-                <ButtonInterface title="Login" type="primary" onPressI={handleSignIn} />
-                <ButtonInterface title="Cadastrar" type="secondary" onPressI={handleRegister} />
+                <ButtonInterface title="Logar" type="secondary" onPressI={handleSignIn} />
+                <ButtonInterface title="Cadastrar" type="primary" onPressI={handleRegister} />
 
             </KeyboardAvoidingView>
 

@@ -40,5 +40,11 @@ export const Painel = StyleSheet.create({
     },
     icone: {
         fontSize: 35
+    },
+    titulo: {
+        fontSize: 25,
+        fontWeight: "800",
+        fontStyle: "italic",
+        marginBottom: 25
     }
 })

@@ -4,7 +4,7 @@ import { MenuDrawer } from "./MenuDrawer";
 
 type MenuStackParam = {
     Login: undefined
-    MenuDrawer: undefined
+    Cadastro: undefined
 }
 
 type MenuScreenNavigation = StackNavigationProp<MenuStackParam, "Login">
@@ -25,8 +25,8 @@ export function MenuStack() {
            }} name="Login" component={Login}/>
 
            <Stack.Screen options={{
-            headerTitle: "MenuDrawer" 
-           }} name="MenuDrawer" component={MenuDrawer}/>
+            headerTitle: "Cadastro" 
+           }} name="Cadastro" component={Cadastro}/>
         </Stack.Navigator>
     )
 }
