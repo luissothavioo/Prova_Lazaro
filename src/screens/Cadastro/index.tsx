@@ -21,7 +21,7 @@ export function Cadastro({ navigation }: MenuStackTypes) {
     const {setLoading} = useAuth()
 
     async function handleRegister() {
-        if (data?.email && data.password) {
+        if (data?.email && data.name && data.password) {
             console.log(data)
             setLoading(true)
             try {
@@ -57,7 +57,7 @@ export function Cadastro({ navigation }: MenuStackTypes) {
                     <TextInput style={Painel.input}
                         placeholderTextColor={"black"}
                         placeholder="Nome"
-                        onChangeText={(i) => handleChange({ email: i })}
+                        onChangeText={(i) => handleChange({ name: i })}
                     />
                 </View>
 
@@ -68,7 +68,8 @@ export function Cadastro({ navigation }: MenuStackTypes) {
                         placeholder="Email"
                         secureTextEntry={true}
                         keyboardType="email-address"
-                        onChangeText={(i) => handleChange({ password: i })}
+                        autoCapitalize="none"
+                        onChangeText={(i) => handleChange({ email: i })}
                     />
                 </View>
 
@@ -78,7 +79,6 @@ export function Cadastro({ navigation }: MenuStackTypes) {
                         placeholderTextColor={"black"}
                         placeholder="Senha"
                         secureTextEntry={true}
-                        keyboardType="email-address"
                         onChangeText={(i) => handleChange({ password: i })}
                     />
                 </View>

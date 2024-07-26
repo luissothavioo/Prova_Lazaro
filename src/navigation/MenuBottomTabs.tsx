@@ -1,14 +1,14 @@
 import { createBottomTabNavigator, BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
-import { Adicionar, Comprar } from "../screens/index";
+import { ScreenPerfil, ScreenMensagem } from "../screens/index";
 import { Entypo, Feather } from "@expo/vector-icons";
 import React from 'react';
 
 type MenuTabParam = {
-    Adicionar: undefined
-    Comprar: undefined
+    Perfil: undefined
+    Mensagens: undefined
 }
 
-type MenuScreenNavigation = BottomTabNavigationProp<MenuTabParam, "Adicionar">
+type MenuScreenNavigation = BottomTabNavigationProp<MenuTabParam, "Perfil">
 export type MenuTabTypes = {
     navigation: MenuScreenNavigation;
 }
@@ -17,22 +17,21 @@ export function MenuBottomTabs() {
     const Tab = createBottomTabNavigator<MenuTabParam>();
     return (
         <Tab.Navigator>
-            <Tab.Screen name="Adicionar" component={Adicionar}
+            <Tab.Screen name="Perfil" component={ScreenPerfil}
                 options={{
                     tabBarIcon: () => (
-                        <Entypo name="plus" size={24} color="black" />
+                        <Entypo name="user" size={27} color="black" />
                     )
                 }}
             />
 
-            <Tab.Screen name="Comprar" component={Comprar}
+            <Tab.Screen name="Mensagens" component={ScreenMensagem}
                 options={{
                     tabBarIcon: () => (
-                        <Entypo name="shopping-cart" size={24} color="black" />
+                        <Entypo name="mail" size={27} color="black" />
                     )
                 }}
             />
-
         </Tab.Navigator>
     )
 }

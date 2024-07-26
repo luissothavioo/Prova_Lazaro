@@ -1,5 +1,5 @@
 import { StackNavigationProp, createStackNavigator } from "@react-navigation/stack";
-import {Login, Cadastro} from "../screens/index"
+import {ScreenLogin, ScreenCadastro} from "../screens/index"
 import { MenuDrawer } from "./MenuDrawer";
 
 type MenuStackParam = {
@@ -22,11 +22,11 @@ export function MenuStack() {
         }}>
            <Stack.Screen options={{
             headerTitle: "Login"
-           }} name="Login" component={Login}/>
+           }} name="Login" component={ScreenLogin}/>
 
            <Stack.Screen options={{
             headerTitle: "Cadastro" 
-           }} name="Cadastro" component={Cadastro}/>
+           }} name="Cadastro" component={ScreenCadastro}/>
         </Stack.Navigator>
     )
 }

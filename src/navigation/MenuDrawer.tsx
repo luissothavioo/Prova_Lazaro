@@ -1,26 +1,23 @@
-import {DrawerNavigationProp, createDrawerNavigator} from '@react-navigation/drawer';
-import { Animais, Cadastro } from '../screens/index';
-import React from 'react';
-import { MenuBottomTabs } from './MenuBottomTabs';
+    import {DrawerNavigationProp, createDrawerNavigator} from '@react-navigation/drawer';
+    import { ScreenPerfil } from '../screens/index';
+    import React from 'react';
+    import { MenuBottomTabs } from './MenuBottomTabs';
 
-type MenuDrawerParam = {
-    Cadastro: undefined
-    Animais: undefined
-    Carros: undefined
-}
+    type MenuDrawerParam = {
+        Perfil: undefined
+    }
 
-type MenuScreenNavigation = DrawerNavigationProp<MenuDrawerParam, "Cadastro">
+    type MenuScreenNavigation = DrawerNavigationProp<MenuDrawerParam, "Perfil">
 
-export type MenuDrawerTypes = {
-    navigation: MenuScreenNavigation;
-}
+    export type MenuDrawerTypes = {
+        navigation: MenuScreenNavigation;
+    }
 
-export function MenuDrawer () {
-    const Drawer = createDrawerNavigator<MenuDrawerParam>();
-    return (
-        <Drawer.Navigator>
-            <Drawer.Screen name='Cadastro' component={Cadastro}/>
-            <Drawer.Screen name='Animais' component={MenuBottomTabs}/>   
-        </Drawer.Navigator>
-    )
-}
+    export function MenuDrawer () {
+        const Drawer = createDrawerNavigator<MenuDrawerParam>();
+        return (
+            <Drawer.Navigator>
+                <Drawer.Screen name='Perfil' component={ScreenPerfil}/> 
+            </Drawer.Navigator>
+        )
+    }
