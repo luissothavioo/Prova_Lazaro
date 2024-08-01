@@ -1,6 +1,7 @@
 import { createBottomTabNavigator, BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { ScreenPerfil, ScreenMensagem } from "../screens/index";
 import { Entypo, Feather } from "@expo/vector-icons";
+import { MensagemStack } from "./MensagemStack";
 import React from 'react';
 
 type MenuTabParam = {
@@ -25,7 +26,7 @@ export function MenuBottomTabs() {
                 }}
             />
 
-            <Tab.Screen name="Mensagens" component={ScreenMensagem}
+            <Tab.Screen name="Mensagens" component={MensagemStack}
                 options={{
                     tabBarIcon: () => (
                         <Entypo name="mail" size={27} color="black" />

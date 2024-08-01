@@ -33,8 +33,7 @@ export const Painel = StyleSheet.create({
     div: {
         width: 350,
         height: 150,
-        borderTopLeftRadius: 100,
-        borderTopRightRadius: 100,
+        borderRadius: 40,
         alignContent: "center",
         justifyContent: "center",
         backgroundColor: "beige",
