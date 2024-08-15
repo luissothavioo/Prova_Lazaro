@@ -24,6 +24,7 @@ export function CadMensagem({ navigation }: MenuStackTypes) {
                 const err = error as AxiosError
                 const msg = err.response?.data as string
                 Alert.alert(msg)
+                console.log(err)
             }
         } else {
             Alert.alert("Preencha todos os campos!!!")

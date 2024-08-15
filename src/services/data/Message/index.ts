@@ -11,11 +11,6 @@ export interface IResponseMessage {
     title: string
     message: string
     created_at: string
-    user: {
-        id: number
-        name: string
-        email: string
-    }
 }
 
 class MessageData {
