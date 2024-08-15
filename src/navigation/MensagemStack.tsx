@@ -1,6 +1,5 @@
 import { StackNavigationProp, createStackNavigator } from "@react-navigation/stack";
 import {ScreenCadastroMensagem, ScreenMensagem} from "../screens/index"
-import { MenuDrawer } from "./MenuDrawer";
 
 type MenuStackParam = {
     Mensagem: undefined

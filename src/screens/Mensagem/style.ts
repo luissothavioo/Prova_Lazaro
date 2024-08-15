@@ -5,7 +5,6 @@ export const Painel = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "rgb(239, 253, 255)"
     },
     botao: {
         backgroundColor: "rgb(12, 132, 232)",
@@ -29,10 +28,11 @@ export const Painel = StyleSheet.create({
         marginBottom: 25
     },
     mensagem: {
-        backgroundColor: "rgb(159, 217, 227)",
+        borderWidth: 2,
+        borderColor: "black",
         marginTop: 20,
         marginBottom: 20,
-        height: 160,
+        height: 120,
         borderRadius: 10,
         width: 300,
         padding: 10
